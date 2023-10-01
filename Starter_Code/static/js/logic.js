@@ -1,13 +1,13 @@
-// Create a new Leaflet map object
+// Create new map
 var myMap = L.map('map').setView([38, -97], 4);
 
-// Add an OpenStreetMap tile layer
+// Add tile layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
   maxZoom: 18,
 }).addTo(myMap);
 
-// Load earthquake data from URL
+// Get all info
 var url = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson';
 var xhr = new XMLHttpRequest();
 xhr.open('GET', url);
@@ -23,7 +23,7 @@ xhr.onload = function() {
   }
 };
 xhr.send();
-// Load earthquake data from URL
+// Get earthquake data again 
 var url = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson';
 var xhr = new XMLHttpRequest();
 xhr.open('GET', url);
